@@ -2,10 +2,12 @@ NAME=practical
 CC=g++
 CFLAGS=-c -Wall
 
+src = task1.o task2.o task3.o task4.o task5.o task6.o
+
 all: build
 
-build: main.o task1.o task2.o task3.o task4.o task5.o task6.o
-	$(CC) main.o task1.o task2.o task3.o task4.o task5.o task6.o -o $(NAME)
+build: main.o $(src)
+	$(CC) main.o $(src) -o $(NAME)
 
 main.o: ../main.cpp
 	$(CC) $(CFLAGS) ../main.cpp
